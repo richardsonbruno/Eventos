@@ -4,6 +4,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import './navbar.css';
 import { Link } from 'react-router-dom';
 
+let verify = "";
+if(localStorage.getItem("logado") !== null){
+    verify = JSON.parse(localStorage.getItem("logado")).usuarioLogado
+}
+
 function Navbar () {
 
     const dispatch = useDispatch();
@@ -42,7 +47,7 @@ function Navbar () {
 
                     {
                         useSelector(state => state.userReducer.usuarioLogado) > 0 ||
-                        JSON.parse(localStorage.getItem("logado")).usuarioLogado > 0
+                        verify > 0
 
                         ?
 

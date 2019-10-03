@@ -54,7 +54,7 @@ function CadastroEventos (){
 
     return (
         <>  
-            <Navbar />
+            <Navbar /> 
             <div className="col-12">
                 <div className="row mt-5">
                     <h3 className="mx-auto font-weight-bold">
