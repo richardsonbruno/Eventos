@@ -1,32 +1,12 @@
-import React, { useEffect }  from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import './navbar.css';
 import { Link } from 'react-router-dom';
 
-let verify = "";
-if(localStorage.getItem("logado") !== null){
-    verify = JSON.parse(localStorage.getItem("logado")).usuarioLogado
-}
-
 function Navbar () {
 
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        if(localStorage.getItem("logado") === null) {
-            const logado = {
-                usuarioEmail: null,
-                usuarioLogado: 0
-            };
-            localStorage.setItem("logado", JSON.stringify(logado));
-        }
-
-        const logado = JSON.parse(localStorage.getItem("logado"));
-        if(logado.usuarioEmail !== null) {
-            dispatch({ type: "LOG_IN", usuarioEmail: logado.usuarioEmail });
-        }
-    }, [dispatch]);
 
     return (
         <nav className="navbar navbar-expand-lg">
@@ -46,8 +26,7 @@ function Navbar () {
                     <li className="nav-item"><Link className="nav-link ml-2" to="/">Home</Link></li>
 
                     {
-                        useSelector(state => state.userReducer.usuarioLogado) > 0 ||
-                        verify > 0
+                        useSelector(state => state.userReducer.usuarioLogado) > 0
 
                         ?
 
@@ -58,11 +37,6 @@ function Navbar () {
                                 <Link className="nav-link" to="" 
                                     onClick={ () => {
                                         dispatch({ type: "LOG_OUT" });
-                                        const logado = {
-                                            usuarioEmail: null,
-                                            usuarioLogado: 0
-                                        };
-                                        localStorage.setItem("logado", JSON.stringify(logado));
                                     } }>
                                     Sair
                                 </Link>

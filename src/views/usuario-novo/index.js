@@ -58,7 +58,7 @@ function NovoUsuario(){
                     }
 
                     <div className="msg-login text-black text-center my-5">
-                        {msgTipo === 'sucesso' ? <span><strong>WoW!</strong> Usuário cadastrado com sucesso! &#128526; </span> : ''}
+                        {msgTipo === 'sucesso' ? <span><strong>WoW!</strong> Usuário cadastrado com sucesso! <i class="far fa-smile-beam"></i> </span> : ''}
                         {msgTipo === 'error' ? msgTipo === 'error' ? <span><strong>Ops!</strong> {msg} &#128546; </span> : '' : ''}
                     </div>
                 </form>

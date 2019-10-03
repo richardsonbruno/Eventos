@@ -4,8 +4,6 @@ import { Provider } from 'react-redux';
 
 import store from '../store';
 
-import PrivateRoute from './PrivateRoute';
-
 /* Páginas */
 import Home from './home';
 import Login from './login';
@@ -21,7 +19,7 @@ const Routes = () => (
           <Route exact path="/login" component={Login} />
           <Route exact path="/novousuario" component={NovoUsuario} />
           <Route exact path='/recuperar-senha' component={RecuperarSenha} />
-          <PrivateRoute exact path='/cadastro-eventos' component={CadastroEventos} />
+          <Route exact path='/cadastro-eventos' component={CadastroEventos} />
         </Switch>
       </Router>
     </Provider>

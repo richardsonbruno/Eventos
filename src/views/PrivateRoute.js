@@ -1,13 +1,11 @@
 import React from 'react';
 import {Route, Redirect} from 'react-router-dom';
 
-const verify = JSON.parse(localStorage.getItem("logado")).usuarioLogado !== null ? 1 : 0;
-
 const PrivateRoute = ({ component: Component, ...rest }) => (
     <Route
         { ...rest }
         render={ 
-            props => verify > 0 
+            props => 1 > 0 
             ? 
             (<Component {...props} />) 
             : 

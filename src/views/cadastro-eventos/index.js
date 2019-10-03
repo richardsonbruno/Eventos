@@ -117,8 +117,8 @@ function CadastroEventos (){
                 </form>
 
                 <div className="msg-login text-center my-5">
-                    {msgTipo === 'sucesso' ? <span><strong>WoW!</strong> Cadastrado com Sucesso! &#128526; </span> : ''}
-                    {msgTipo === 'error' ? <span><strong>Ops!</strong> Não foi possível publicar o evento! &#128546; </span> : '' }
+                    {msgTipo === 'sucesso' ? <span><strong>WoW!</strong> Cadastrado com Sucesso! <i class="far fa-smile-beam"></i> </span> : ''}
+                    {msgTipo === 'error' ? <span><strong>Ops!</strong> Não foi possível publicar o evento! <i class="far fa-grin-beam-sweat"></i> </span> : '' }
                 </div>
             </div>
         </>
